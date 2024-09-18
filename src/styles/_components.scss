@@ -1,0 +1,37 @@
+// // Card
+// .card {
+//   background-color: $white;
+//   padding: $spacing-md;
+//   border-radius: 5px;
+//   @include box-shadow(0, 4px, 8px, rgba(0, 0, 0, 0.1));
+
+//   .card-header {
+//     font-weight: $font-weight-bold;
+//     font-size: $font-size-lg;
+//     margin-bottom: $spacing-sm;
+//   }
+
+//   .card-body {
+//     font-size: $font-size-md;
+//   }
+// }
+
+// // Badge
+// .badge {
+//   background-color: $secondary-color;
+//   padding: $spacing-sm;
+//   color: $white;
+//   border-radius: 3px;
+// }
+
+// // Button
+.button {
+	background-color: $black;
+	color: $white;
+	font-size: $font-size-12px;
+	font-weight: $font-weight-semibold;
+	cursor: pointer;
+  padding: 5px 20px;
+	border-radius: 80px;
+  transform: rotate(8deg);
+}

@@ -1,0 +1,32 @@
+@import '../_variables';
+// TODO : changer VH et PX 
+
+.landing {
+  @include flex-center(column, center, center);
+  width: 100%;
+
+  &__content {
+    background-color: red;
+    @include flex-center(row, space-between, center);
+    height: 100%;
+    width: 100%;
+
+  }
+
+  &__title {
+    font-size: $font-size-115px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+
+  }
+
+}
+
+.progress-bar__fill {
+  width: 10%; 
+  height: 4px; 
+  background-color: $black;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
