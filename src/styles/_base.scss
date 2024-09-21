@@ -1,71 +1,81 @@
-@import './variables';
+@import "./variables";
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-  font-size: 100%;
-  line-height: 1.5;
+	font-size: 100%;
+	line-height: 1.5;
 }
 
 body {
-  font-family: $font-family-inter, sans-serif;
-  background-color: $beige;
-  color: $black;
-  min-height: 100vh;
+	font-family: $font-family-inter, sans-serif;
+	background-color: $beige;
+	color: $black;
+	min-height: 100vh;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 20px 5px;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 button,
 input,
 select,
 textarea {
-  font: inherit;
-  background: none;
-  border: none;
-  outline: none;
+	font: inherit;
+	background: none;
+	border: none;
+	outline: none;
 }
 
 ul,
 ol {
-  list-style: none;
+	list-style: none;
 }
 
 img,
 video,
 iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 0.5em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0.5em;
 }
 
 table {
-  border-collapse: collapse;
-  width: 100%;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 caption {
-  text-align: center;
+	text-align: center;
 }
 
-th, td {
-  padding: 0.5em;
-  text-align: left;
+th,
+td {
+	padding: 0.5em;
+	text-align: left;
 }
 
-section, article {
-  display: block;
+section,
+article {
+	display: block;
 }

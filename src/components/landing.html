@@ -1,36 +1,50 @@
 <template id="landing-component">
-  <header class="header">
-    <div class="progress-bar progress-bar--fixed">
-      <div class="progress-bar__fill"></div>
-    </div>
-    <nav class="header__navbar" style="display: flex; justify-content: space-between">
-      <div class="header__nav-content">
-        <button class="button">LA PISCINE</button>
-      </div>
-      <div class="progress-bar-number">10%</div>
-      <div class="theme-switch">
-        <div class="theme-switch__icon">switch</div>
-      </div>
-    </nav>
+	<header class="header">
+		<div class="progress-bar progress-bar--fixed">
+			<div class="progress-bar__fill"></div>
+		</div>
+		<nav
+			class="header__navbar"
+			style="display: flex; justify-content: space-between"
+		>
+			<div class="header__nav-content">
+				<button class="button">LA PISCINE</button>
+			</div>
+			<div class="progress-bar-number">0%</div>
+			<div class="theme-switch">
+				<div class="theme-switch__icon">switch</div>
+			</div>
+		</nav>
 
-    <section class="landing">
-      <div class="landing__content">
-        <h1 class="landing__title">
-          Que le plus fort, <br />
-          <img src="/illustrations/logo.png" alt="Logo" class="landing__logo" />
-          l'emporte !
-        </h1>
-        <img
-          src="/illustrations/card.png"
-          alt="Illustration"
-          class="landing__illustration"
-        />
-      </div>
-      <div class="landing__text">
-        <h2 class="landing__text-title">
-          &lt;A&gt; Front les tous! Clash of Dev
-        </h2>
-      </div>
-    </section>
-  </header>
+		<section class="landing">
+			<div class="landing__content">
+				<div class="landing__heading">
+					<h1 class="landing__heading-text">
+						Que le plus fort,
+						<span class="landing__heading-logo">
+							<img
+								src="/illustrations/logo.png"
+								alt="Logo"
+								class="landing__logo"
+							/>
+							l'emporte !
+						</span>
+					</h1>
+				</div>
+				<img
+					src="/illustrations/card.png"
+					alt="Illustration"
+					class="landing__illustration"
+				/>
+			</div>
+			<div class="landing__description-container">
+				<div class="landing__description">
+					<h2 class="landing__description-title">
+						&lt;A&gt; Front les tous! Clash of Dev
+					</h2>
+				</div>
+			</div>
+		</section>
+		
+	</header>
 </template>
