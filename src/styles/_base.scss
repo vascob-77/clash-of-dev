@@ -1,5 +1,3 @@
-@import "./variables";
-
 *,
 *::before,
 *::after {
@@ -10,17 +8,30 @@
 
 html {
 	font-size: 100%;
+	overflow-x: hidden;
 	line-height: 1.5;
+	@include theme-styles(
+		$color-light-background,
+		$color-light-text,
+		$color-dark-background,
+		$color-dark-text
+	);
 }
 
 body {
 	font-family: $font-family-inter, sans-serif;
-	background-color: $beige;
-	color: $black;
-	min-height: 100vh;
+	min-height: 100svh;
 	max-width: 1440px;
+	width: 100%;
+	overflow-x: hidden;
 	margin: 0 auto;
 	padding: 20px 5px;
+	@include theme-styles(
+		$color-light-background,
+		$color-light-text,
+		$color-dark-background,
+		$color-dark-text
+	);
 }
 
 a {
@@ -46,18 +57,9 @@ ol {
 img,
 video,
 iframe {
-	max-width: 100%;
+	// max-width: 100%;
 	height: auto;
 	display: block;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin-bottom: 0.5em;
 }
 
 table {

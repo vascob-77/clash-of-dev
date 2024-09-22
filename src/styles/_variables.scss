@@ -1,47 +1,59 @@
-// Espacement
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-lg: 32px;
-$spacing-xl: 64px;
+// Spacing
+$spacing-sm: 0.5rem; // 8px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 2rem; // 32px
+$spacing-xl: 4rem; // 64px
+$spacing-section: 6.25rem; // 100px
 
-// Couleurs
-$black: #262625;
-$beige: #F3F3F1;
-$white: #FEFEFE;
+// Colors
+$color-black: #262625;
+$color-beige: #F3F3F1;
+$color-white: #FEFEFE;
 
-$blue-mid: #77A1D1;
-$blue-dark: #6B93C0;
-$blue-light: #BADAFF;
+$color-blue-mid: #77A1D1;
+$color-blue-dark: #6B93C0;
+$color-blue-light: #BADAFF;
 
-$orange-mid: #F28164;
-$orange-dark: #D46F55;
-$orange-light: #FFBCAB;
+$color-orange-mid: #F28164;
+$color-orange-dark: #D46F55;
+$color-orange-light: #FFBCAB;
 
-$green-mid: #A2B87E;
-$green-dark: #95AE6D;
-$green-light: #ECFFCE;
+$color-green-mid: #A2B87E;
+$color-green-dark: #95AE6D;
+$color-green-light: #ECFFCE;
 
-$mustang-mid: #CAC48E;
-$mustang-dark: #C2BB82;
-$mustang-light: #FFFAC2;
+$color-mustang-mid: #CAC48E;
+$color-mustang-dark: #C2BB82;
+$color-mustang-light: #FFFAC2;
 
-$pink-mid: #F588B9;
-$pink-dark: #D6699A;
-$pink-light: #FFEDF5;
+$color-pink-mid: #F588B9;
+$color-pink-dark: #D6699A;
+$color-pink-light: #FFEDF5;
 
-$purple-mid : #9FA8FE;
-$purple-dark: #8A92E3;
-$purple-light: #EBEDFF;
+$color-purple-mid: #9FA8FE;
+$color-purple-dark: #8A92E3;
+$color-purple-light: #EBEDFF;
 
+// Light Theme Colors
+$color-light-background: $color-beige;
+$color-light-text: $color-black;
+$color-light-primary: $color-blue-mid;
+$color-light-secondary: $color-orange-mid;
 
-// Typographies
+// Dark Theme Colors
+$color-dark-background: $color-black;
+$color-dark-text: $color-beige;
+$color-dark-primary: $color-blue-dark;
+$color-dark-secondary: $color-orange-dark;
+
+// Typography
 $font-family-inter: 'Inter', sans-serif;
 
-$font-size-174px: 174px;
-$font-size-115px: 115px;
-$font-size-74px: 74px;
-$font-size-40px: 40px;
-$font-size-12px: 12px;
+$font-size-xxl: 10.875rem; // 174px
+$font-size-xl: 7.188rem; // 115px
+$font-size-l: 4.625rem; // 74px
+$font-size-m: 2.5rem; // 40px
+$font-size-s: 0.75rem; // 12px
 
 $font-weight-semibold: 600;
 $font-weight-bold: 700;

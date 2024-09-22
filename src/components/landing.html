@@ -10,41 +10,65 @@
 			<div class="header__nav-content">
 				<button class="button">LA PISCINE</button>
 			</div>
-			<div class="progress-bar-number">0%</div>
-			<div class="theme-switch">
-				<div class="theme-switch__icon">switch</div>
+			<div class="progress-bar-number">
+				<p>0%</p>
+			</div>
+			<div class="theme-switch" id="themeSwitch">
+				<div class="theme-switch__icon"></div>
 			</div>
 		</nav>
-
 		<section class="landing">
 			<div class="landing__content">
 				<div class="landing__heading">
-					<h1 class="landing__heading-text">
+					<!-- desktop -->
+					<h1 class="landing__heading-text landing__heading-text--desktop">
 						Que le plus fort,
 						<span class="landing__heading-logo">
 							<img
-								src="/illustrations/logo.png"
+								src="/illustrations/landing/logo-shield.svg"
 								alt="Logo"
 								class="landing__logo"
 							/>
-							l'emporte !
+							&nbsp;l'emporte !
 						</span>
 					</h1>
+
+					<!-- mobile -->
+					<h1 class="landing__heading-text landing__heading-text--mobile">
+						<span class="landing__heading-logo">
+							Que le
+							<img
+								src="/illustrations/landing/logo-shield.svg"
+								alt="Logo"
+								class="landing__logo"
+							/>
+						</span>
+						plus fort,
+						<span class="landing__heading-logo"> l'emporte! </span>
+					</h1>
 				</div>
-				<img
-					src="/illustrations/card.png"
-					alt="Illustration"
-					class="landing__illustration"
-				/>
+				<div class="landing__card">
+					<img
+						src="/illustrations/landing/card-crown.svg"
+						alt="Illustration"
+						class="illustration--crown"
+					/>
+					<img
+						src="/illustrations/landing/logo-clash-of-dev--black.svg "
+						alt="Illustration"
+						class="illustration--clash-of-dev"
+					/>
+				</div>
 			</div>
-			<div class="landing__description-container">
-				<div class="landing__description">
-					<h2 class="landing__description-title">
-						&lt;A&gt; Front les tous! Clash of Dev
-					</h2>
+			<div class="landing__description">
+				<div class="landing__scroll-container">
+					<img
+						src="/illustrations/landing/text-horizontal.svg"
+						alt="Illustration"
+						class="landing__illustration"
+					/>
 				</div>
 			</div>
 		</section>
-		
 	</header>
 </template>

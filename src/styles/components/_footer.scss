@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  padding: 1rem;
+
+
+  p {
+    margin: 0;
+    font-family: $font-family-inter;
+    font-weight: $font-weight-semibold;
+    align-self: center;
+  }
+}

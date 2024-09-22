@@ -5,6 +5,31 @@
   align-items: $align;
 }
 
+@mixin theme-styles($light-background, $light-text, $dark-background, $dark-text) {
+  &[data-theme="light"] {
+    background-color: $light-background;
+    color: $light-text;
+  }
+
+  &[data-theme="dark"] {
+    background-color: $dark-background;
+    color: $dark-text;
+  }
+}
+
+@mixin button-theme-styles($color-black, $color-light) {
+  background-color: $color-black; 
+  color: $color-light;
+
+  &[data-theme="dark"] {
+    background-color: $color-light; 
+    color: $color-black;
+  }
+}
+
+
+
+
 @mixin respond-to($breakpoint) {
   @if $breakpoint == 'small' {
     @media (max-width: 600px) { @content; }
@@ -13,8 +38,4 @@
   } @else if $breakpoint == 'large' {
     @media (max-width: 1200px) { @content; }
   }
-}
-
-@mixin box-shadow($x: 0, $y: 2px, $blur: 10px, $color: rgba(0, 0, 0, 0.1)) {
-  box-shadow: $x $y $blur $color;
 }

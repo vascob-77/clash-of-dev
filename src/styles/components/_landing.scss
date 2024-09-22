@@ -1,77 +1,257 @@
 @import "../_variables";
 
-// TODO: ajuster les VH et PX si nécessaire
+// Progress bar
+.progress-bar-number {
+	position: relative;
+	height: 20px;
+	white-space: nowrap;
 
-.header {
-	font-size: $font-size-12px;
-	font-weight: $font-weight-bold;
+	p {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	}
 }
 
-.progress-bar__fill {
-	// La progress sur la maquette fait 32px de width, sur une largeur de 1440px ;)
-	width: calc(1440px / 45);
+.progress-bar {
+	position: relative;
 	height: 4px;
-	background-color: $black;
-	position: fixed;
-	top: 0;
-	left: 0;
+	background: transparent;
+
+	&__fill {
+		width: 0%;
+		height: 4px;
+		background-color: $color-black;
+		position: fixed;
+		top: 0;
+		left: 0;
+		transition: width 0.3s ease, background-color 0.3s ease,
+			transform 0.5s ease-in-out;
+
+		&.enlarged {
+			transform: scaleY(2);
+		}
+
+		&.shrunk {
+			transform: scaleY(1);
+		}
+	}
 }
 
+.progress-bar-number p {
+	font-weight: bold;
+	transform: scale(3);
+	left: -18px;
+	top: 5px;
+	opacity: 1;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.progress-bar-number p.shrinking {
+	transform: scale(1);
+	opacity: 0;
+}
+
+// Navbar
+.theme-switch {
+	width: 54px;
+	height: 27px;
+	background-color: $color-black;
+	border-radius: 15px;
+	position: relative;
+	cursor: pointer;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+	&__icon {
+		width: 23px;
+		height: 23px;
+		background-image: url("/illustrations/landing/switch-black.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		left: 2px;
+		transition: left 0.3s ease, transform 0.3s ease;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&.active {
+		.theme-switch__icon {
+			left: 28px;
+		}
+	}
+}
+
+// Main
 .landing {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	width: 100%;
-	height: 100svh;
 
 	&__content {
 		display: flex;
 		align-items: center;
-		flex-grow: 1;
 		width: 100%;
+		margin-top: 141px;
+		margin-bottom: 160px;
+		position: relative;
+
+		@media (max-width: 768px) {
+			margin-top: 95px;
+			margin-bottom: 0;
+			flex-direction: column;
+		}
 	}
 
 	&__heading {
 		&-text {
-			display: block;
+			display: none;
 			text-align: start;
-			font-size: $font-size-115px;
+			font-size: $font-size-xl;
 			font-weight: 600;
 			line-height: 1.2;
+			text-wrap: balance;
+
+			&--desktop {
+				display: block;
+
+				@media (max-width: 768px) {
+					display: none !important;
+				}
+			}
+
+			&--mobile {
+				@media (max-width: 768px) {
+					display: block;
+					font-size: $font-size-l;
+					text-align: start;
+
+					.landing__heading-logo {
+						display: block;
+						width: 100%;
+					}
+
+					.landing__logo {
+						display: inline-block;
+						margin-left: 0.25rem;
+					}
+				}
+			}
 		}
 
 		&-logo {
 			display: inline-flex;
 			align-items: center;
+			font-family: $font-family-inter;
+			font-style: italic;
+
+			@media (max-width: 768px) {
+				width: auto;
+			}
 		}
 	}
 
 	&__illustration {
-		height: auto;
+		max-width: none;
+		animation: scroll-horizontal 40s linear infinite;
+
+		@media (max-width: 768px) {
+			margin-top: 50px;
+		}
 	}
 
-	.landing__description-container {
+	&__card {
 		position: relative;
-		height: 100vh; 
-		overflow: hidden;
+		.illustration--crown {
+			width: 368px;
+			height: 356px;
+			max-width: none;
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: scale(1.02);
+			}
+
+			@media (max-width: 768px) {
+				margin-top: 40px;
+			}
+		}
+
+		.illustration--clash-of-dev {
+			position: absolute;
+			top: 0;
+			right: 10px;
+			height: 73px;
+			width: 70px;
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: scale(1.1) rotate(10deg);
+			}
+		}
 	}
-	
-	.landing__description {
-		position: sticky;
-		top: 0;
-		display: flex;
-		align-items: center;
-		height: 100%;
-		white-space: nowrap;
-		overflow: hidden;
-		background-color: red;
+}
+
+.header__nav-content,
+.theme-switch {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.header__nav-content.visible,
+.theme-switch.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.landing__content,
+.landing__heading,
+.landing__card,
+.landing__description {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.landing__content.visible,
+.landing__heading.visible,
+.landing__card.visible,
+.landing__description.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.landing__heading {
+	transition-delay: 0.3s;
+}
+
+@keyframes scroll-horizontal {
+	0% {
+		transform: translateX(0);
 	}
-	
-	.landing__description-title {
-		font-size: $font-size-174px;
-		white-space: nowrap;
-		transform: translateX(100%);
-		transition: transform 0.3s ease-out;
+	50% {
+		transform: translateX(-100%);
 	}
-	
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes moveRandomly {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(
+			calc(100px - 200px * random()),
+			calc(100px - 200px * random())
+		);
+	}
 }

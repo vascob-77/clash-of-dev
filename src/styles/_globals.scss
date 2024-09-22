@@ -1,0 +1,17 @@
+
+.button {
+  position: relative;
+  z-index: 1;
+  font-size: $font-size-s;
+  font-weight: $font-weight-bold;
+  padding: 7px 12px;
+  border-radius: 80px;
+  cursor: pointer;
+  transform: rotate(8deg);
+  transition: all 0.3s ease;
+
+
+  &:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+}
