@@ -14,18 +14,29 @@ document.addEventListener("DOMContentLoaded", () => {
 		})
 		.then(({ progressBarElement, progressTextElement }) => {
 			let progress = 0;
-			// Fake loading random progress
-			const interval = setInterval(() => {
-				const increment = Math.floor(Math.random() * (25 - 10 + 1)) + 10;
-				progress = Math.min(progress + increment, 100);
+			let startTime = performance.now();
+
+			const maxDuration = 2000; 
+
+			const update = (currentTime: number) => {
+				const elapsedTime = currentTime - startTime;
+				if (elapsedTime >= maxDuration) {
+					progress = 100;
+				} else {
+					const increment = Math.floor(Math.random() * (25 - 10 + 1)) + 10;
+					progress = Math.min(progress + increment, 100);
+				}
 
 				updateProgress(progressBarElement, progressTextElement, progress);
 
-				if (progress >= 100) {
-					clearInterval(interval);
+				if (progress < 100) {
+					requestAnimationFrame(update);
+				} else {
 					showLandingContent();
 				}
-			}, 150);
+			};
+
+			requestAnimationFrame(update);
 		})
 		.catch((error) => console.error(error));
 });
@@ -48,35 +59,35 @@ function updateProgress(
 		progressTextElement.classList.add("shrinking");
 	}
 }
+
 function showLandingContent() {
-    const navbarContent = document.querySelector('.header__nav-content') as HTMLElement;
-    const themeSwitch = document.querySelector('.theme-switch') as HTMLElement;
-    const landingContent = document.querySelector('.landing__content') as HTMLElement;
-    const landingHeading = document.querySelector('.landing__heading') as HTMLElement;
-    const landingCard = document.querySelector('.landing__card') as HTMLElement;
-    const landingDescription = document.querySelector('.landing__description') as HTMLElement;
+	const navbarContent = document.querySelector('.header__nav-content') as HTMLElement;
+	const themeSwitch = document.querySelector('.theme-switch') as HTMLElement;
+	const landingContent = document.querySelector('.landing__content') as HTMLElement;
+	const landingHeading = document.querySelector('.landing__heading') as HTMLElement;
+	const landingCard = document.querySelector('.landing__card') as HTMLElement;
+	const landingDescription = document.querySelector('.landing__description') as HTMLElement;
 
-    if (landingContent && landingHeading && landingCard && landingDescription) {
-        landingContent.classList.add('visible');
+	if (landingContent && landingHeading && landingCard && landingDescription) {
+		landingContent.classList.add('visible');
 
-        setTimeout(() => {
-            landingHeading.classList.add('visible');
-        }, 300); 
+		setTimeout(() => {
+			landingHeading.classList.add('visible');
+		}, 300); 
 
-        setTimeout(() => {
-            landingCard.classList.add('visible');
-        }, 800); 
+		setTimeout(() => {
+			landingCard.classList.add('visible');
+		}, 800); 
 
-        setTimeout(() => {
-            landingDescription.classList.add('visible');
-        }, 1400); 
+		setTimeout(() => {
+			landingDescription.classList.add('visible');
+		}, 1400); 
 
-        setTimeout(() => {
-            navbarContent.classList.add('visible');
-            themeSwitch.classList.add('visible');
-        }, 1800); 
-    } else {
-        console.error("Landing content, heading, card or description not found");
-    }
+		setTimeout(() => {
+			navbarContent.classList.add('visible');
+			themeSwitch.classList.add('visible');
+		}, 1800); 
+	} else {
+		console.error("Landing content, heading, card or description not found");
+	}
 }
-
